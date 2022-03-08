@@ -34,9 +34,11 @@ public class EmployeeController {
 	public List<Employee> getEmployees() {
 		return eService.getEmployees();
 	}
-	@GetMapping("employeesdt")
-	public String getEmployeesdt() {
-		return "details of employess will be displayed";
+	
+	
+	@GetMapping("/employeesdt/{id}")
+	public Employee getEmployee(@PathVariable Long id) {
+		return eService.getSingleEmployee(id);
 	}
 	
 	@GetMapping("dlt")
